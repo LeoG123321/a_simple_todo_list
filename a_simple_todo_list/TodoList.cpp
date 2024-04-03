@@ -1,5 +1,6 @@
 #include "TodoList.h"
 #include <iostream>
+#include <iterator>
 using namespace std;
 
 TodoList::TodoList() {
@@ -17,23 +18,27 @@ void TodoList::complete_task(int index) {
 
 void TodoList::select_complete_task_list() {
 	cout << endl << endl;
-	for (int i = 0; i < task_list.size(); i++) {
-		if (!task_list[i].get_complete_status()) {
-			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
+	vector<Task>::iterator ptr;
+	int index = 0;
+	for (ptr = task_list.begin(); ptr < task_list.end(); ptr++) {
+		if (!(*ptr).get_complete_status()) {
+			cout << index << " [ ] " << (*ptr).get_task_name() << endl;
 		}
+		index++;
 	}
 	cout << endl << endl;
 }
 
 void TodoList::all_task_list() {
 	cout << endl << endl;
+	vector<Task>::iterator ptr;
 
-	for (int i = 0; i < task_list.size(); i++) {
-		if (task_list[i].get_complete_status()) {
-			cout << " [X] " << task_list[i].get_task_name() << endl;
+	for (ptr = task_list.begin(); ptr < task_list.end(); ptr++) {
+		if ((*ptr).get_complete_status()) {
+			cout << " [X] " << (*ptr).get_task_name() << endl;
 		}
 		else {
-			cout << " [ ] " << task_list[i].get_task_name() << endl;
+			cout << " [ ] " << (*ptr).get_task_name() << endl;
 		}
 	}
 	cout << endl << endl;
@@ -41,10 +46,11 @@ void TodoList::all_task_list() {
 
 void TodoList::completed_task_list() {
 	cout << endl << endl;
+	vector<Task>::iterator ptr;
 
-	for (int i = 0; i < task_list.size(); i++) {
-		if (task_list[i].get_complete_status()) {
-			cout << " [X] " << task_list[i].get_task_name() << endl;
+	for (ptr = task_list.begin(); ptr < task_list.end(); ptr++) {
+		if ((*ptr).get_complete_status()) {
+			cout << " [X] " << (*ptr).get_task_name() << endl;
 		}
 	}
 	cout << endl << endl;
@@ -52,10 +58,11 @@ void TodoList::completed_task_list() {
 
 void TodoList::incomplete_task_list() {
 	cout << endl << endl;
+	vector<Task>::iterator ptr;
 
-	for (int i = 0; i < task_list.size(); i++) {
-		if (!task_list[i].get_complete_status()) {
-			cout << " [ ] " << task_list[i].get_task_name() << endl;
+	for (ptr = task_list.begin(); ptr < task_list.end(); ptr++) {
+		if (!(*ptr).get_complete_status()) {
+			cout << " [ ] " << (*ptr).get_task_name() << endl;
 		}
 	}
 	cout << endl << endl;

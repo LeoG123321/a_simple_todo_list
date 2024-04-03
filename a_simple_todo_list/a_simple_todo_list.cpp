@@ -34,7 +34,7 @@ int main()
         switch (main_menu_input) {
             case 1:
                 cout << "Please Input Your Task to add to the Todo List:" << endl;
-                getline(cin, task_name_input);
+                getline(cin, task_name_input);  //Cleans up to allow input
                 getline(cin, task_name_input);
                 todo_list.add_task(task_name_input);
                 cout << endl << endl;
