@@ -24,6 +24,7 @@ void TodoList::all_task_list() {
 			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
 		}
 	}
+	cout << endl;
 }
 
 void TodoList::completed_task_list() {
@@ -32,6 +33,7 @@ void TodoList::completed_task_list() {
 			cout << i << " [X] " << task_list[i].get_task_name() << endl;
 		}
 	}
+	cout << endl;
 }
 
 void TodoList::incomplete_task_list() {
@@ -40,7 +42,13 @@ void TodoList::incomplete_task_list() {
 			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
 		}
 	}
+	cout << endl;
 }
+
+int TodoList::get_amount_of_tasks() {
+	return task_list.size();
+}
+
 
 void TodoList::clear() {
 	vector<Task> empty;

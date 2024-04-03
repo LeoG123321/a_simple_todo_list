@@ -16,6 +16,8 @@ public:
 	void completed_task_list();
 	void incomplete_task_list();
 
+	int get_amount_of_tasks();
+
 	void clear();
 };
 
