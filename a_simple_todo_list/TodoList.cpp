@@ -1,4 +1,6 @@
 #include "TodoList.h"
+#include <iostream>
+using namespace std;
 
 TodoList::TodoList() {
 	return;
@@ -14,15 +16,30 @@ void TodoList::complete_task(int index) {
 }
 
 void TodoList::all_task_list() {
-
+	for (int i = 0; i < task_list.size(); i++) {
+		if (task_list[i].get_complete_status()) {
+			cout << i << " [X] " << task_list[i].get_task_name() << endl;
+		}
+		else {
+			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
+		}
+	}
 }
 
 void TodoList::completed_task_list() {
-
+	for (int i = 0; i < task_list.size(); i++) {
+		if (task_list[i].get_complete_status()) {
+			cout << i << " [X] " << task_list[i].get_task_name() << endl;
+		}
+	}
 }
 
 void TodoList::incomplete_task_list() {
-
+	for (int i = 0; i < task_list.size(); i++) {
+		if (!task_list[i].get_complete_status()) {
+			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
+		}
+	}
 }
 
 void TodoList::clear() {
