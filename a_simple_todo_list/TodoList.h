@@ -1,15 +1,21 @@
 #pragma once
 #include "Task.h"
+#include <vector>
+using namespace std;
 class TodoList
 {
+private:
+	vector<Task> task_list;
 public:
 	TodoList();
 
-	void add_task();
-	void complete_task();
-	void all_tasks();
+	void add_task(string task);
+	void complete_task(int index);
+	
+	void all_task_list();
 	void completed_task_list();
 	void incomplete_task_list();
+
 	void clear();
 };
 
