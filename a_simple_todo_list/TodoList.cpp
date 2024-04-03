@@ -15,34 +15,50 @@ void TodoList::complete_task(int index) {
 	task_list[index].complete_task();
 }
 
-void TodoList::all_task_list() {
-	for (int i = 0; i < task_list.size(); i++) {
-		if (task_list[i].get_complete_status()) {
-			cout << i << " [X] " << task_list[i].get_task_name() << endl;
-		}
-		else {
-			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
-		}
-	}
-	cout << endl;
-}
-
-void TodoList::completed_task_list() {
-	for (int i = 0; i < task_list.size(); i++) {
-		if (task_list[i].get_complete_status()) {
-			cout << i << " [X] " << task_list[i].get_task_name() << endl;
-		}
-	}
-	cout << endl;
-}
-
-void TodoList::incomplete_task_list() {
+void TodoList::select_complete_task_list() {
+	cout << endl << endl;
 	for (int i = 0; i < task_list.size(); i++) {
 		if (!task_list[i].get_complete_status()) {
 			cout << i << " [ ] " << task_list[i].get_task_name() << endl;
 		}
 	}
-	cout << endl;
+	cout << endl << endl;
+}
+
+void TodoList::all_task_list() {
+	cout << endl << endl;
+
+	for (int i = 0; i < task_list.size(); i++) {
+		if (task_list[i].get_complete_status()) {
+			cout << " [X] " << task_list[i].get_task_name() << endl;
+		}
+		else {
+			cout << " [ ] " << task_list[i].get_task_name() << endl;
+		}
+	}
+	cout << endl << endl;
+}
+
+void TodoList::completed_task_list() {
+	cout << endl << endl;
+
+	for (int i = 0; i < task_list.size(); i++) {
+		if (task_list[i].get_complete_status()) {
+			cout << " [X] " << task_list[i].get_task_name() << endl;
+		}
+	}
+	cout << endl << endl;
+}
+
+void TodoList::incomplete_task_list() {
+	cout << endl << endl;
+
+	for (int i = 0; i < task_list.size(); i++) {
+		if (!task_list[i].get_complete_status()) {
+			cout << " [ ] " << task_list[i].get_task_name() << endl;
+		}
+	}
+	cout << endl << endl;
 }
 
 int TodoList::get_amount_of_tasks() {

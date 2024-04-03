@@ -35,6 +35,7 @@ int main()
             case 1:
                 cout << "Please Input Your Task to add to the Todo List:" << endl;
                 getline(cin, task_name_input);
+                getline(cin, task_name_input);
                 todo_list.add_task(task_name_input);
                 cout << endl << endl;
                 break;
@@ -42,7 +43,7 @@ int main()
             case 2:
                 if (todo_list.get_amount_of_tasks() != 0) {
                     cout << "Select the Number With the Corresponding Task you Have Completed" << endl << endl;
-                    todo_list.incomplete_task_list();
+                    todo_list.select_complete_task_list();
                 case_2_redo:
                     cin >> sub_menu_input;
                     if (sub_menu_input >= 0 && sub_menu_input < todo_list.get_amount_of_tasks()) {

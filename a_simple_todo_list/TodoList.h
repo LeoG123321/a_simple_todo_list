@@ -12,6 +12,7 @@ public:
 	void add_task(string task);
 	void complete_task(int index);
 	
+	void select_complete_task_list();
 	void all_task_list();
 	void completed_task_list();
 	void incomplete_task_list();
